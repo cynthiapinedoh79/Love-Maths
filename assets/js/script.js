@@ -15,6 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    document.getElementById("answer-box").addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            checkAnswer();
+        }
+    })
+
     runGame("addition");
 
 });
@@ -24,6 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
  * and after the user's answer has been processed
  */
 function runGame(gameType) {
+    document.getElementById("answer-box").value = "";
+    document.getElementById("answer-box").focus();
+    // Sets the answer-box to be empty and focused
+    // so that the user can start typing their answer
+    // The focus() method sets the focus to the answer-box
+    // The value property sets the value of the answer-box to an empty string
 
     // Creates two random numbers between 1 and 25
     let num1 = Math.floor(Math.random() * 25) + 1;
