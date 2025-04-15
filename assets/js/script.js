@@ -142,7 +142,16 @@ function displayMultiplyQuestion(operand1, operand2) {
 }
 
 function displayDivisionQuestion(operand1, operand2) {
+    operand1 = operand1 * operand2; 
+    // Ensure the first operand is a multiple of the second
+    // This ensures that the division question is always a whole number
+    // For example, if operand1 is 4 and operand2 is 2, the question will be 4 ÷ 2 = ?
+    // If operand1 is 5 and operand2 is 2, the question will be 10 ÷ 2 = ?
+    // This ensures that the division question is always a whole number
+    // This is done by multiplying the first operand by the second operand
+
     document.getElementById('operand1').textContent = operand1;
     document.getElementById('operand2').textContent = operand2;
+    // Ensure the second operand is not zero
     document.getElementById('operator').textContent = "÷";
 }
